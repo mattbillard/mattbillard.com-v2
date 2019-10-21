@@ -1,12 +1,15 @@
 import React from 'react';
+import { About, Contact, Home, Skills } from '../';
 import './app.css';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <div className="App">
-      app
+      App
+      <Home />
+      <About />
+      <Skills />
+      <Contact />
     </div>
   );
 }
-
-export default App;
