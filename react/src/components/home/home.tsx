@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -10,26 +10,23 @@ export interface IHomeView {
   getHomeText: typeof getHomeText;
 }
 
-class HomeView extends Component<IHomeView, {}> {
-  componentDidMount() {
-    const { homeText, getHomeText } = this.props;
+export const HomeView: React.FC<IHomeView> = (props) => {
+  const { homeText, getHomeText } = props;
+
+  useEffect(() => {
     !homeText && getHomeText();
-  }
+  });
 
-  render() {
-    const { homeText } = this.props;
-
-    return (
-      <div>
-        <h2>Home</h2>
-        {homeText && (
-          <React.Fragment>
-            <pre>{ JSON.stringify(homeText, null, '  ') }</pre>
-          </React.Fragment>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>Home</h2>
+      {homeText && (
+        <React.Fragment>
+          <pre>{ JSON.stringify(homeText, null, '  ') }</pre>
+        </React.Fragment>
+      )}
+    </div>
+  );
 }
 
 const mapStateToProps = (state: IStoreState) => ({

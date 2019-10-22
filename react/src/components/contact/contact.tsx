@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -10,26 +10,23 @@ export interface IContactView {
   getContactText: typeof getContactText;
 }
 
-class ContactView extends Component<IContactView, {}> {
-  componentDidMount() {
-    const { contactText, getContactText } = this.props;
+export const ContactView: React.FC<IContactView> = (props) => {
+  const { contactText, getContactText } = props;
+
+  useEffect(() => {
     !contactText && getContactText();
-  }
+  });
 
-  render() {
-    const { contactText } = this.props;
-
-    return (
-      <div>
-        <h2>Contact</h2>
-        {contactText && (
-          <React.Fragment>
-            <pre>{ JSON.stringify(contactText, null, '  ') }</pre>
-          </React.Fragment>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>Contact</h2>
+      {contactText && (
+        <React.Fragment>
+          <pre>{ JSON.stringify(contactText, null, '  ') }</pre>
+        </React.Fragment>
+      )}
+    </div>
+  );
 }
 
 const mapStateToProps = (state: IStoreState) => ({

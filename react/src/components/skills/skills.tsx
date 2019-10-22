@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -10,26 +10,23 @@ export interface ISkillsView {
   getSkillsText: typeof getSkillsText;
 }
 
-class SkillsView extends Component<ISkillsView, {}> {
-  componentDidMount() {
-    const { skillsText, getSkillsText } = this.props;
+export const SkillsView: React.FC<ISkillsView> = (props) => {
+  const { skillsText, getSkillsText } = props;
+
+  useEffect(() => {
     !skillsText && getSkillsText();
-  }
+  });
 
-  render() {
-    const { skillsText } = this.props;
-
-    return (
-      <div>
-        <h2>Skills</h2>
-        {skillsText && (
-          <React.Fragment>
-            <pre>{ JSON.stringify(skillsText, null, '  ') }</pre>
-          </React.Fragment>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>Skills</h2>
+      {skillsText && (
+        <React.Fragment>
+          <pre>{ JSON.stringify(skillsText, null, '  ') }</pre>
+        </React.Fragment>
+      )}
+    </div>
+  );
 }
 
 const mapStateToProps = (state: IStoreState) => ({

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -10,26 +10,23 @@ export interface IAboutView {
   getAboutText: typeof getAboutText;
 }
 
-class AboutView extends Component<IAboutView, {}> {
-  componentDidMount() {
-    const { aboutText, getAboutText } = this.props;
+export const AboutView: React.FC<IAboutView> = (props) => {
+  const { aboutText, getAboutText } = props;
+
+  useEffect(() => {
     !aboutText && getAboutText();
-  }
+  });
 
-  render() {
-    const { aboutText } = this.props;
-
-    return (
-      <div>
-        <h2>About</h2>
-        {aboutText && (
-          <React.Fragment>
-            <pre>{ JSON.stringify(aboutText, null, '  ') }</pre>
-          </React.Fragment>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>About</h2>
+      {aboutText && (
+        <React.Fragment>
+          <pre>{ JSON.stringify(aboutText, null, '  ') }</pre>
+        </React.Fragment>
+      )}
+    </div>
+  );
 }
 
 const mapStateToProps = (state: IStoreState) => ({
