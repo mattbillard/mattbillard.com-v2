@@ -5,8 +5,7 @@ import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 import { About, Contact, Home, Skills, TopBar } from '../';
 import { configureStore } from '../../redux';
 
-// import './app.css';
-import 'antd/dist/antd.css';
+import './app.css';
 
 const store = configureStore();
 
