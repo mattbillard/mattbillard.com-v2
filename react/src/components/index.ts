@@ -1,4 +1,5 @@
 export * from './about/about';
+export * from './bottom-bar/bottom-bar';
 export * from './app/app';
 export * from './contact/contact';
 export * from './home/home';

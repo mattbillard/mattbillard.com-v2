@@ -2,10 +2,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 
-import { About, Contact, Home, Skills, TopBar } from '../';
+import { About, BottomBar, Contact, Home, Skills, TopBar } from '../';
 import { configureStore } from '../../redux';
 
 import './app.css';
+import 'antd-mobile/dist/antd-mobile.css'; 
 
 const store = configureStore();
 
@@ -22,7 +23,7 @@ export const App: React.FC = () => {
           <Link to='/skills'>skills </Link> 
           <Link to='/contact'>contact </Link> 
 
-          <div>
+          <div style={{padding: '10px'}}>
             <Switch>
               <Route path='/home' component={Home}/>
               <Route path='/about' component={About}/>
@@ -32,6 +33,7 @@ export const App: React.FC = () => {
             </Switch>
           </div>
 
+          <BottomBar />
         </div>
       </BrowserRouter> 
     </Provider>
