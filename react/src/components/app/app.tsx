@@ -5,8 +5,7 @@ import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 import { About, Contact, Home, Skills, TopBar } from '../';
 import { configureStore } from '../../redux';
 
-// import './app.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.css';
 
 const store = configureStore();
 
@@ -23,7 +22,7 @@ export const App: React.FC = () => {
           <Link to='/skills'>skills </Link> 
           <Link to='/contact'>contact </Link> 
 
-          <div style={{padding: '10px'}}>
+          <div>
             <Switch>
               <Route path='/home' component={Home}/>
               <Route path='/about' component={About}/>
