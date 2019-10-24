@@ -14,16 +14,11 @@ export const InnerContent: React.FC = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="inner-content">
+
+        <div className="inner-content flex-rows">
           <TopBar />
 
-          <h1>InnerContent</h1>
-          <Link to='/inner/home'>home </Link> 
-          <Link to='/inner/about'>about </Link> 
-          <Link to='/inner/skills'>skills </Link> 
-          <Link to='/inner/contact'>contact </Link> 
-
-          <div style={{padding: '10px'}}>
+          <div className="content-area flex-grow-1">
             <Switch>
               <Route path='/inner/home' component={Home}/>
               <Route path='/inner/about' component={About}/>
@@ -33,8 +28,15 @@ export const InnerContent: React.FC = () => {
             </Switch>
           </div>
 
-          {/* <BottomBar /> */}
+          {/* <h1>InnerContent</h1> */}
+          {/* <Link to='/inner/home'>home </Link>  */}
+          {/* <Link to='/inner/about'>about </Link>  */}
+          {/* <Link to='/inner/skills'>skills </Link>  */}
+          {/* <Link to='/inner/contact'>contact </Link>  */}
+
+          <BottomBar />
         </div>
+
       </BrowserRouter> 
     </Provider>
   );
