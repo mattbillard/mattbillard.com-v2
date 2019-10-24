@@ -4,25 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MattBillard.com</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
 
-      iframe {
-        position: absolute;
-        width: 400px;
-        height: 600px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 1px solid #333;
-      }
-    </style>
+    <link href="public/styles/styles.css" rel="stylesheet">
+
+    <script src="public/scripts/jquery.min.js"></script>
+    <script src="public/scripts/moveableBlocks/hammer.js"></script>
+    <script src="public/scripts/moveableBlocks/moveableBlocks.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <iframe src="http://localhost:3000/"></iframe>
+
+    <div id="moveableBlocksWrapper">
+
+      <div class="phone mblock">
+        <div class="iframe-container">
+          <iframe src="http://localhost:3000/contact"></iframe>
+        </div>
+        <div class="overlay-image"></div>
+      </div>
+      
+    </div>
   </body>
 </html>

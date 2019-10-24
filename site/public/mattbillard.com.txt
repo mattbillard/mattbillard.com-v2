@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>MattBillard.com</title>
+        
+        <!-- jQuery -->
+        <script src="../../resources/tools/kendoUiMobile/js/jquery.min.js"></script>
+        <script src="../../resources/tools/jquery/purl/purl.js"></script>
+        
+        <!-- Bootstrap -->
+        <link href="../../resources/tools/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="../../resources/tools/bootstrap/js/bootstrap.min.js"></script>
+        
+        <!-- Font Awesome -->
+        <link href="../../resources/tools/fontAwesome/css/font-awesome.css" rel="stylesheet">
+
+        <!-- Kendo UI Mobile Demo -->
+        <link href="../../resources/tools/kendoUiMobileDemo/css/kmDemo.css" rel="stylesheet" />
+        <script src="../../resources/tools/kendoUiMobileDemo/js/kmDemo.js"></script>
+
+        <!-- Kendo UI Mobile PHP -->
+        <script src="../../resources/tools/kendoUiMobilePhp/js/kendoUiMobilePhp.js"></script>
+        
+        <!-- moveableBlocks -->
+        <link href="../../resources/tools/moveableBlocks/css/moveableBlocks.css" rel="stylesheet" />
+        <script src="../../resources/tools/moveableBlocks/js/moveableBlocks.js"></script>
+        <script src="../../resources/tools/moveableBlocks/js/hammer.js"></script>
+
+        <!-- Sugar.js -->
+        <script src="../../resources/tools/sugarJs/sugar.js"></script>
+        
+        <!-- main CSS -->
+        <link href="../../resources/css/shared.css" rel="stylesheet" />
+        <link href="../../resources/css/site.css" rel="stylesheet" />
+
+        <!-- Bootstrap: HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- NOTE: needs to be after all other CSS -->
+        <!--[if lt IE 9]>
+            <script src="../../resources/tools/bootstrap/js/html5shiv.js"></script>
+            <script src="../../resources/tools/bootstrap/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="phone">
+        
+        <div id="siteWrapper">
+
+            <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top hiddenPhone" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">MattBillard.com</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+                    <ul class="nav navbar-nav">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change OS<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" onclick="kmDemo.switchOs('ios'); return false;">iOS6</a></li>
+                                <li><a href="#" onclick="kmDemo.switchOs('flat'); return false;">iOS7</a></li>
+                                <li><a href="#" onclick="kmDemo.switchOs('android'); return false;">Android</a></li>
+                                <li><a href="#" onclick="kmDemo.switchOs('wp'); return false;">Windows</a></li>
+                                <li><a href="#" onclick="kmDemo.switchOs('blackberry'); return false;">BlackBerry</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change Width<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" onclick="kmDemo.changeScreenWidth('phone'); return false;">Simulate Phone Width</a></li>
+                                <li><a href="#" onclick="kmDemo.changeScreenWidth('default'); return false;">Reset Width</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li>
+                                    <div class="note">
+                                        <strong>Hint: </strong>
+                                        thanks to responsive design, you'll get a different design if you view the site on a narrow device like a phone. You can also resize your browser.
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Move Phone<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" onclick="kmDemo.move('default'); return false;">Reset Position</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li>
+                                    <div class="note">
+                                        <strong>Hint: </strong>
+                                        try dragging the phone with your mouse or finger. You can even bounce it off the edges of your browser's screen.
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change Rotation<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" onclick="kmDemo.rotate(45); return false;">Rotate 45&deg; <i class="icon-rotate-right"></i></a></li>
+                                <li><a href="#" onclick="kmDemo.rotate(-45); return false;">Rotate 45&deg; <i class="icon-rotate-left"></i></a></li>
+                                <li><a href="#" onclick="kmDemo.rotate('default'); return false;">Reset Rotation</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li>
+                                    <div class="note">
+                                        <strong>Hint: </strong>
+                                        if you have a touchscreen, try rotating the phone with one finger on the top edge of the phone and one on the bottom edge.
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+
+            <div id="moveableBlocksWrapper">
+                <div id="device-wrapper" class="mblock">
+                    <iframe id="kmDemoIframe" src="../../site/iframe/index.html?mainPane=/home/root/#/"></iframe>
+                </div>
+                
+                            </div>
+            
+         </div>
+        
+        <script>
+            $(document).ready(function(){
+                //Init moveableBlocks
+                moveableBlocksApp.init();
+                
+                //Initialize Kendo Demo
+                kmDemo.styleDeviceWrapper();
+                
+                //Center device on screen
+                kmDemo.move('default');
+                kmDemo.rotate('default');
+            });
+        </script> 
+        
+    </body>
+</html>
