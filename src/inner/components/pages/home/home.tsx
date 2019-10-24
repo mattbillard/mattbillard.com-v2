@@ -17,14 +17,14 @@ export const HomeView: React.FC<IHomeView> = (props) => {
     !homeText && getHomeText();
   });
 
+  if (!homeText) {
+    return null;
+  }
+
   return (
     <div>
-      <h2>Home</h2>
-      {homeText && (
-        <React.Fragment>
-          <pre>{ JSON.stringify(homeText, null, '  ') }</pre>
-        </React.Fragment>
-      )}
+      <h1>{homeText.name}</h1>
+      <h2>{homeText.title}</h2>
     </div>
   );
 }

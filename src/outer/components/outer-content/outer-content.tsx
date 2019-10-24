@@ -11,7 +11,7 @@ export const OuterContent: React.FC = () => {
 
       <div className="phone mblock">
         <div className="iframe-container">
-          <iframe src="/inner/about"></iframe>
+          <iframe src="/inner/about" title="portfolio"></iframe>
         </div>
         <div className="phone-image"></div>
       </div>

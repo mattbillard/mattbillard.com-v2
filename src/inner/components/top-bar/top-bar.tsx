@@ -5,9 +5,12 @@ import { NavBar } from 'antd-mobile';
 export const TopBar: React.FC = () => {
   return (
     <NavBar
-      className="top-nav-bar"
+      mode="dark"
+      style={{background:'#111118'}}
     >
-      MattBillard.com
+      <div style={{color:'#ddd'}}>
+        MattBillard.com
+      </div>
     </NavBar>
   );
 }

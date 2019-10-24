@@ -14,3 +14,9 @@ export interface ITextReducerState {
   skillsText?: ISkillsText;
   contactText?: IContactText;
 }
+
+export interface IResumeText {
+  title: string,
+  text: string,
+  href: string,
+}

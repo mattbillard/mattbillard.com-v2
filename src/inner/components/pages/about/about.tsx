@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { Card } from 'antd-mobile';
 
+import { DownloadResume } from '../../';
 import { getAboutText, IStoreState } from '../../../redux';
 import { IAboutText } from '../../../types';
 
@@ -19,40 +19,51 @@ export const AboutView: React.FC<IAboutView> = (props) => {
     !aboutText && getAboutText();
   });
 
+  if (!aboutText) {
+    return null;
+  }
+
+  const { downloadResume, summary, workExperience } = aboutText;
+
   return (
     <div>
-      {/* <h2>About</h2>
+      <h2>About</h2>
+
+      {/* <h3>{downloadResume.title}</h3> */}
+      {/* <Card style={{marginBottom: 10}}>
+        <Card.Body>
+          <a href={downloadResume.href}>{downloadResume.text}</a>
+        </Card.Body>
+      </Card> */}
+      <DownloadResume resumeText={downloadResume} />
+
+      <h3>{summary.title}</h3>
+      <Card style={{marginBottom: 10}}>
+        <Card.Body>
+          <div>{summary.details1}</div>
+          <div>{summary.details2}</div>
+        </Card.Body>
+      </Card>
+
+      <h3>{workExperience.title}</h3>
+      {workExperience.jobs.map((job, idx) => (
+        <Card style={{marginBottom: 10}} key={idx}>
+          <Card.Header title={job.company} />
+          <Card.Body>
+            <div>{job.title}</div>
+            <div>{job.dates}</div>
+            <div>{job.location}</div>
+          </Card.Body>
+        </Card>
+      ))}
+
+
+      {/* 
       {aboutText && (
         <React.Fragment>
           <pre>{ JSON.stringify(aboutText, null, '  ') }</pre>
         </React.Fragment>
       )} */}
-
-      <Card>
-        <Card.Header title="This is title" />
-        <Card.Body>
-          <h1>Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <p>Lorem ipusum</p>
-        </Card.Body>
-      </Card>
-
-      <Card>
-        <Card.Header title="This is title" />
-        <Card.Body>
-          <p>Lorem ipusum</p>
-        </Card.Body>
-      </Card>
-
-      <Card>
-        <Card.Header title="This is title" />
-        <Card.Body>
-          <p>Lorem ipusum</p>
-        </Card.Body>
-      </Card>
 
     </div>
   );

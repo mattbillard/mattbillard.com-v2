@@ -1,43 +1,44 @@
 import React from 'react';
-
+import { withRouter } from 'react-router-dom';
 import { TabBar } from 'antd-mobile';
 
-export const BottomBar: React.FC = () => {
+import { config } from '../../../config';
+
+const { uris } = config;
+
+export const BottomBar = withRouter(({ history }) =>  {
   return (
     <div>
       <TabBar
-        unselectedTintColor="#949494"
-        tintColor="#33A3F4"
-        barTintColor="white"
+        barTintColor="#111118"
+        tintColor="#ccc"
+        unselectedTintColor="#ccc"
       >
         <TabBar.Item
-          title="Life"
-          key="Life"
-          // icon={<div style={{ width: '22px', height: '22px', background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }} />}
-          badge={1}
+          title="Home"
+          icon={<div style={{color:'#fa0'}}>&#9673;</div>}
+          onPress={() => { history.push(uris.home.page) }}
         >
         </TabBar.Item>
         <TabBar.Item
-          // icon={<div style={{ width: '22px', height: '22px', background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }} />}
-          title="Koubei"
-          key="Koubei"
-          badge={'new'}
+          title="About"
+          icon={<div style={{color:'#fa0'}}>&#9673;</div>}
+          onPress={() => { history.push(uris.about.page) }}
         >
         </TabBar.Item>
         <TabBar.Item
-          // icon={<div style={{ width: '22px', height: '22px', background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }} />}
-          title="Friend"
-          key="Friend"
-          dot
+          title="Skills"
+          icon={<div style={{color:'#fa0'}}>&#9673;</div>}
+          onPress={() => { history.push(uris.skills.page) }}
         >
         </TabBar.Item>
         <TabBar.Item
-          // icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-          title="My"
-          key="my"
+          title="Contact"
+          icon={<div style={{color:'#fa0'}}>&#9673;</div>}
+          onPress={() => { history.push(uris.contact.page) }}
         >
         </TabBar.Item>
       </TabBar>
     </div>
   );
-}
+})
