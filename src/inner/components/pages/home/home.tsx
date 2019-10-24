@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getHomeText, IStoreState } from '../../redux';
-import { IHomeText } from '../../types';
+import { getHomeText, IStoreState } from '../../../redux';
+import { IHomeText } from '../../../types';
 
 export interface IHomeView {
   homeText: IHomeText;

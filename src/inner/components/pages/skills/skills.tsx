@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getSkillsText, IStoreState } from '../../redux';
-import { ISkillsText } from '../../types';
+import { getSkillsText, IStoreState } from '../../../redux';
+import { ISkillsText } from '../../../types';
 
 export interface ISkillsView {
   skillsText: ISkillsText;

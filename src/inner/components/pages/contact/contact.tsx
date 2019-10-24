@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getContactText, IStoreState } from '../../redux';
-import { IContactText } from '../../types';
+import { getContactText, IStoreState } from '../../../redux';
+import { IContactText } from '../../../types';
 
 export interface IContactView {
   contactText: IContactText;

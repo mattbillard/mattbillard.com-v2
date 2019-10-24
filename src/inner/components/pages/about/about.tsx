@@ -4,8 +4,8 @@ import { bindActionCreators } from 'redux';
 
 import { Card } from 'antd-mobile';
 
-import { getAboutText, IStoreState } from '../../redux';
-import { IAboutText } from '../../types';
+import { getAboutText, IStoreState } from '../../../redux';
+import { IAboutText } from '../../../types';
 
 export interface IAboutView {
   aboutText: IAboutText;
