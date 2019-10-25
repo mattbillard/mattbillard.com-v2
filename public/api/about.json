@@ -1,9 +1,4 @@
 {
-  "downloadResume": {
-    "title": "Resume",
-    "text": "Download Resume",
-    "href": "#resume"
-  },
   "summary": {
     "title": "Summary",
     "details1": "100+ websites and apps",
@@ -15,58 +10,66 @@
       {
         "company": "Goldman Sachs + InRhythm",
         "location": "Manhattan, NY",
-        "title": "JavaScript Developer (Lead Developer)",
+        "role1": "JavaScript Developer",
+        "role2": "(Lead Developer)",
         "dates": "December 2017 - Present"
       },
       { 
         "company": "Mastercard + InRhythm",
         "location": "Manhattan, NY",
-        "title": "JavaScript Developer (Lead Developer)",
+        "role1": "JavaScript Developer",
+        "role2": "(Lead Developer)",
         "dates": "March 2017 - December 2017"
       },
       { 
         "company": "J.P. Morgan Chase",
         "location": "Manhattan, NY",
-        "title": "Full Stack Developer (Lead Developer)",
+        "role1": "Full Stack Developer",
+        "role2": "(Lead Developer)",
         "dates": "September 2015 - March 2017"
       },
       { 
         "company": "Morgan Stanley",
         "location": "Manhattan, NY",
-        "title": "MEAN Stack Developer (Project Lead)",
+        "role1": "MEAN Stack Developer",
+        "role2": "(Project Lead)",
         "dates": "March 2014 - September 2015"
       },
       { 
         "company": "J.P. Morgan Chase",
         "location": "Manhattan, NY",
-        "title": "UI/UX and Mobile Developer (Project Lead)",
+        "role1": "UI/UX and Mobile Developer",
+        "role2": "(Project Lead)",
         "dates": "Dec. 2011 - March 2014"
       },
       { 
         "company": "Kaman Industrial Technologies",
         "location": "Windsor, CT",
-        "title": "Front-End Developer",
+        "role1": "Front-End Developer",
+        "role2": "",
         "dates": "Jan. 2010 – Dec. 2011"
       },
       { 
         "company": "Xillion Design",
         "location": "Glastonbury, CT",
-        "title": "Owner / Front-End Developer",
+        "role1": "Owner / Front-End Developer",
+        "role2": "",
         "dates": "Aug. 2006 – Dec. 2009"
       },
       { 
         "company": "Technivision LLC",
         "location": "Tolland, CT",
-        "title": "Website Designer",
+        "role1": "Website Designer",
+        "role2": "",
         "dates": "June 2003 – Aug 2006"
       }
     ]
   },
   "education": {
     "title": "Education",
-    "location": "University of Connecticut",
-    "dates": "Storrs, CT (2001-2006)",
-    "details1": "Bachelor of Fine Arts, concentration in Graphic Design",
-    "details2": "Summa Cum Laude, Honors Scholar, Dean’s List, 3.97 GPA"
+    "university": "University of Connecticut",
+    "details1": "Storrs, CT (2001-2006)",
+    "details2": "Bachelor of Fine Arts, concentration in Graphic Design",
+    "details3": "Summa Cum Laude, Honors Scholar, Dean’s List, 3.97 GPA"
   }
 }

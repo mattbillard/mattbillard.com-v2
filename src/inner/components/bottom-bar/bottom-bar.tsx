@@ -14,30 +14,14 @@ export const BottomBar = withRouter(({ history }) =>  {
         tintColor="#ccc"
         unselectedTintColor="#ccc"
       >
-        <TabBar.Item
-          title="Home"
-          icon={<div style={{color:'#fa0'}}>&#9673;</div>}
-          onPress={() => { history.push(pages.home.innerUri) }}
-        >
-        </TabBar.Item>
-        <TabBar.Item
-          title="About"
-          icon={<div style={{color:'#fa0'}}>&#9673;</div>}
-          onPress={() => { history.push(pages.about.innerUri) }}
-        >
-        </TabBar.Item>
-        <TabBar.Item
-          title="Skills"
-          icon={<div style={{color:'#fa0'}}>&#9673;</div>}
-          onPress={() => { history.push(pages.skills.innerUri) }}
-        >
-        </TabBar.Item>
-        <TabBar.Item
-          title="Contact"
-          icon={<div style={{color:'#fa0'}}>&#9673;</div>}
-          onPress={() => { history.push(pages.contact.innerUri) }}
-        >
-        </TabBar.Item>
+        {Object.values(pages).map((page, idx) => (
+          <TabBar.Item
+            title={page.name}
+            icon={<i className={`${page.icon}`}></i>}
+            onPress={() => { history.push(page.innerUri) }}
+            key={idx}
+          />
+        ))}
       </TabBar>
     </div>
   );

@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Card } from 'antd-mobile';
 
+import { DownloadResume } from '../../';
 import { getContactText, IStoreState } from '../../../redux';
 import { IContactText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
+
+import './contact.css';
 
 export interface IContactView {
   contactText: IContactText;
@@ -24,30 +27,25 @@ export const ContactView: React.FC<IContactView> = (props) => {
     return null;
   }
 
-  const { gitHub, linkedIn } = contactText;
-
   return (
     <div>
       <h2>Contact</h2>
-      {/* {contactText && (
-        <React.Fragment>
-          <pre>{ JSON.stringify(contactText, null, '  ') }</pre>
-        </React.Fragment>
-      )} */}
 
-      <Card style={{marginBottom: 10}}>
-        <Card.Header title={gitHub.title} />
-        <Card.Body>
-          <a href={gitHub.href}>{gitHub.href}</a>
-        </Card.Body>
-      </Card>
+      <DownloadResume />
 
-      <Card style={{marginBottom: 10}}>
-        <Card.Header title={linkedIn.title} />
-        <Card.Body>
-          <a href={linkedIn.href}>{linkedIn.href}</a>
-        </Card.Body>
-      </Card>
+      {Object.values(contactText).map((contact, idx) => (
+        <Card style={{marginBottom: 10}} key={idx}>
+          <Card.Header title={contact.title} />
+          <Card.Body>
+            <a href={contact.href} target="_blank" rel="noopener noreferrer" className="contact-link">
+              <i className={`${contact.icon} fa-10x`}></i> 
+              <br/>
+              {contact.href}
+            </a>
+          </Card.Body>
+        </Card>
+      ))}
+
     </div>
   );
 }

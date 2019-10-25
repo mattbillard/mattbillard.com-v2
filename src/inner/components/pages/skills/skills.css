@@ -1,0 +1,10 @@
+
+.skill .left {
+  float: left;
+  width: 40px;
+  padding: 0 10px 10px 0;
+}
+
+.skill .right {
+  margin-left: 40px;
+}

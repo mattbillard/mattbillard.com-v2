@@ -6,6 +6,7 @@ import { About, BottomBar, Contact, Home, Skills, TopBar } from '../';
 import * as config from '../../../config';
 import { configureStore } from '../../redux';
 
+import '../../../shared/styles/flexbox.css';
 import './inner-content.css';
 import 'antd-mobile/dist/antd-mobile.css'; 
 

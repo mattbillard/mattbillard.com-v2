@@ -8,6 +8,8 @@ import { getSkillsText, IStoreState } from '../../../redux';
 import { ISkillsText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
+import './skills.css';
+
 export interface ISkillsView {
   skillsText: ISkillsText;
   getSkillsText: typeof getSkillsText;
@@ -25,28 +27,31 @@ export const SkillsView: React.FC<ISkillsView> = (props) => {
     return null;
   }
 
-  const { downloadResume, skillGroups } = skillsText;
+  const { skillGroups } = skillsText;
 
   return (
-    <div>
+    <div className="skills">
       <h2>Skills</h2>
-      {/* {skillsText && (
-        <React.Fragment>
-          <pre>{ JSON.stringify(skillsText, null, '  ') }</pre>
-        </React.Fragment>
-      )} */}
-
-      {/* <h3>{downloadResume.title}</h3> */}
-      <DownloadResume resumeText={downloadResume} />
+      
+      <DownloadResume />
 
       {skillGroups.map((skillGroup, idx1) => (
         <React.Fragment key={idx1}>
+
           <h3>{skillGroup.title}</h3>
+
           {skillGroup.skills.map((skill, idx2) => (
             <Card style={{marginBottom: 10}} key={idx2}>
-              <Card.Header title={skill.title} />
               <Card.Body>
-                <div>{skill.details}</div>
+                <div className="skill">
+                  <div className="left">
+                    <i className={`${skill.icon} fa-2x`}></i> 
+                  </div>
+                  <div className="right">
+                    <h3><strong>{skill.title}</strong></h3>
+                    <div>{skill.details}</div>
+                  </div>
+                </div>
               </Card.Body>
             </Card>
           ))}

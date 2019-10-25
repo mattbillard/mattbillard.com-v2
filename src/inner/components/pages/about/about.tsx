@@ -25,19 +25,12 @@ export const AboutView: React.FC<IAboutView> = (props) => {
     return null;
   }
 
-  const { downloadResume, summary, workExperience } = aboutText;
+  const { education, summary, workExperience } = aboutText;
 
   return (
     <div>
       <h2>About</h2>
-
-      {/* <h3>{downloadResume.title}</h3> */}
-      {/* <Card style={{marginBottom: 10}}>
-        <Card.Body>
-          <a href={downloadResume.href}>{downloadResume.text}</a>
-        </Card.Body>
-      </Card> */}
-      <DownloadResume resumeText={downloadResume} />
+      <DownloadResume />
 
       <h3>{summary.title}</h3>
       <Card style={{marginBottom: 10}}>
@@ -50,22 +43,25 @@ export const AboutView: React.FC<IAboutView> = (props) => {
       <h3>{workExperience.title}</h3>
       {workExperience.jobs.map((job, idx) => (
         <Card style={{marginBottom: 10}} key={idx}>
-          <Card.Header title={job.company} />
+          <Card.Header title={job.company} style={{fontWeight: 'bold'}} />
           <Card.Body>
-            <div>{job.title}</div>
+            <div><strong>{job.role1}</strong></div>
+            {job.role2 && <div><strong>{job.role2}</strong></div>}
             <div>{job.dates}</div>
             <div>{job.location}</div>
           </Card.Body>
         </Card>
       ))}
 
-
-      {/* 
-      {aboutText && (
-        <React.Fragment>
-          <pre>{ JSON.stringify(aboutText, null, '  ') }</pre>
-        </React.Fragment>
-      )} */}
+      <h3>{education.title}</h3>
+        <Card style={{marginBottom: 10}}>
+          <Card.Header title={education.university} style={{fontWeight: 'bold'}} />
+          <Card.Body>
+            <div>{education.details1}</div>
+            <div>{education.details2}</div>
+            <div>{education.details3}</div>
+          </Card.Body>
+        </Card>
 
     </div>
   );

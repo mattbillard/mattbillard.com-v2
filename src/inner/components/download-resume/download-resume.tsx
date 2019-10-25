@@ -1,25 +1,14 @@
 import React from 'react';
-// import { Card } from 'antd-mobile';
 import { Button } from 'antd-mobile';
 
-import { IResumeText } from '../../types';
+const resumeText = {
+  text: "Download Resume",
+  href: "/assets/downloads/Matt-Billard-resume.pdf"
+};
 
-export interface IDownloadResume {
-  resumeText: IResumeText;
-}
-
-export const DownloadResume: React.FC<IDownloadResume> = (props) => {
-  const { resumeText } = props;
-
+export const DownloadResume: React.FC = () => {
   return (
-    // <div>
-    //   <Card style={{marginBottom: 10}}>
-    //     <Card.Body>
-    //       <a href={resumeText.href}>{resumeText.text}</a>
-    //     </Card.Body>
-    //   </Card>
-    // </div>
-    <Button onClick={() => window.open(resumeText.href, '_blank')}>
+    <Button onClick={() => window.open(resumeText.href, '_blank')} style={{marginBottom:10}}>
       {resumeText.text}
     </Button>
   );

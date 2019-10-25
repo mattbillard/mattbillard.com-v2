@@ -1,0 +1,30 @@
+.home {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translate(0px, -50%);
+  padding-top: 20px;
+}
+
+.logo-big > * {
+  font-size: 240px;
+  margin-bottom: 50px;
+}
+
+.logo-small > * {
+  font-size: 52px;
+  padding: 0 5px;
+}
+
+.home h1 {
+  margin: 20px 0 0 0;
+  line-height: 1.2em;
+}
+
+.home h2 {
+  margin: 0;
+  line-height: 1.2em;
+}

@@ -6,6 +6,8 @@ import { getHomeText, IStoreState } from '../../../redux';
 import { IHomeText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
+import './home.css';
+
 export interface IHomeView {
   homeText: IHomeText;
   getHomeText: typeof getHomeText;
@@ -24,9 +26,26 @@ export const HomeView: React.FC<IHomeView> = (props) => {
   }
 
   return (
-    <div>
-      <h1>{homeText.name}</h1>
-      <h2>{homeText.title}</h2>
+    <div className="home">
+
+      <div>
+        <div className="logo-big">
+          <i className="fab fa-react"></i> 
+        </div>
+        <div className="logo-small">
+          <i className="fab fa-vuejs"></i> 
+          <i className="fab fa-js"></i> 
+          <i className="fab fa-node-js"></i> 
+          <i className="fab fa-java"></i> 
+          <i className="fab fa-python"></i> 
+        </div>
+      </div>
+
+      <div>
+        <h1>{homeText.name}</h1>
+        <h2>{homeText.title}</h2>
+      </div>
+
     </div>
   );
 }
