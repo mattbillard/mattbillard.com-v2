@@ -51,6 +51,13 @@ var moveableBlocksApp = {
     //---------------------------------------- main app ----------------------------------------
     
     init: function() {
+        var mblocks = $('.mblock');
+
+        // Quit if no mblocks
+        if (mblocks.length === 0) {
+            return;
+        }
+
         //Setup the app
         if (this._useFirebugLite) this._initFirebugLite();
         if (this._isRightClickPrevented) this._stopRightClick();
@@ -60,7 +67,6 @@ var moveableBlocksApp = {
         this._extendJQuery();
       
         //Loop through boxes setting some props
-        var mblocks = $('.mblock');
         for (var i=0, length=mblocks.length; i<length; i++) {
             var mblock = mblocks[i];
             var mblockIdNum = i;
@@ -124,7 +130,8 @@ var moveableBlocksApp = {
             moveableBlocksApp.stopXyzBox(event);
         };
         hammer.ondoubletap = function(event) { 
-            moveableBlocksApp.log(event.type);
+            $(event.originalEvent.target).removeAttr('style');
+            // moveableBlocksApp.log(event.type);
         };
         
         hammer.ondrag = function(event) {
@@ -262,8 +269,7 @@ var moveableBlocksApp = {
                 }
             }
         }
-    },
-    
+    }, 
     
     //---------------------------------------- moving mBlocks ----------------------------------------
     
@@ -301,6 +307,10 @@ var moveableBlocksApp = {
     stopXyzBox: function(event) {
         var touches = event.originalEvent.touches || [event.originalEvent];
         var mblock = $(touches[0].target).closest('.mblock');
+        if (mblock.length === 0) {
+            return;
+        }
+        
         var mblockIdNum = $(mblock).getIdNum();
         
         //Stop all of the mblock's momentum
@@ -428,7 +438,7 @@ var moveableBlocksApp = {
             this.setX(newX);
             this.setY(newY);
             
-            console.log(newX, newY);
+            // console.log(newX, newY);
             $('#centerDot').setX(x);
             $('#centerDot').setY(y);
 
