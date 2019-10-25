@@ -17,7 +17,7 @@ export const OuterContent: React.FC = () => {
     <div>
 
       <div id="moveableBlocksWrapper">
-        <div className="phone mblock">
+        <div className="phone-wrapper mblock">
           <div className="iframe-container">
             <iframe src={`/inner${page}`} title="portfolio"></iframe>
           </div>
