@@ -1,4 +1,5 @@
 import React from 'react';
+import * as config from '../../../config';
 
 import { NavBar } from 'antd-mobile';
 
@@ -9,7 +10,7 @@ export const TopBar: React.FC = () => {
       style={{background:'#111118'}}
     >
       <div style={{color:'#ddd'}}>
-        MattBillard.com
+        {config.siteTitle}
       </div>
     </NavBar>
   );

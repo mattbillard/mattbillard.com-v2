@@ -5,6 +5,7 @@ import { Card } from 'antd-mobile';
 
 import { getContactText, IStoreState } from '../../../redux';
 import { IContactText } from '../../../types';
+import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
 export interface IContactView {
   contactText: IContactText;
@@ -16,6 +17,7 @@ export const ContactView: React.FC<IContactView> = (props) => {
 
   useEffect(() => {
     !contactText && getContactText();
+    tellParentToUpdateUrl('contact');
   });
 
   if (!contactText) {

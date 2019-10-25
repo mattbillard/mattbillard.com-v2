@@ -6,6 +6,7 @@ import { Card } from 'antd-mobile';
 import { DownloadResume } from '../../';
 import { getSkillsText, IStoreState } from '../../../redux';
 import { ISkillsText } from '../../../types';
+import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
 export interface ISkillsView {
   skillsText: ISkillsText;
@@ -17,6 +18,7 @@ export const SkillsView: React.FC<ISkillsView> = (props) => {
 
   useEffect(() => {
     !skillsText && getSkillsText();
+    tellParentToUpdateUrl('skills');
   });
 
   if (!skillsText) {

@@ -6,6 +6,7 @@ import { Card } from 'antd-mobile';
 import { DownloadResume } from '../../';
 import { getAboutText, IStoreState } from '../../../redux';
 import { IAboutText } from '../../../types';
+import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
 export interface IAboutView {
   aboutText: IAboutText;
@@ -17,6 +18,7 @@ export const AboutView: React.FC<IAboutView> = (props) => {
 
   useEffect(() => {
     !aboutText && getAboutText();
+    tellParentToUpdateUrl('about');
   });
 
   if (!aboutText) {

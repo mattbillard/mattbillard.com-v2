@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { getHomeText, IStoreState } from '../../../redux';
 import { IHomeText } from '../../../types';
+import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
 export interface IHomeView {
   homeText: IHomeText;
@@ -15,6 +16,7 @@ export const HomeView: React.FC<IHomeView> = (props) => {
 
   useEffect(() => {
     !homeText && getHomeText();
+    tellParentToUpdateUrl('home');
   });
 
   if (!homeText) {
