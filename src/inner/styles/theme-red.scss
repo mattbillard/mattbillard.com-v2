@@ -1,0 +1,58 @@
+.redTheme {
+  color: #555;
+
+  i {
+    color: #ff5252;
+  }
+  
+  .top-bar {
+    border-color: #aaa;
+
+    .circle-icon {
+      background-color: #ff5252;
+    }
+  }
+  
+  .bottom-bar {
+    font-size: 12px;
+    border-color: #aaa;
+    
+    i { 
+      font-size: 18px; 
+    }
+    
+    .bottom-tab {
+      
+      &:hover {
+        font-weight: 400;
+        color: #333;
+      }
+    }
+  }
+  
+  .button {
+    color: #555 !important;
+    border-color: #aaa;
+  
+    &:hover {
+      color: #fff !important;
+      background: #ff5252;
+    }
+  }
+  
+  .card {
+    border: none;
+    border-radius: 0;
+    border-bottom: dotted 1px #aaa;
+
+    .card-header {
+      border: none;
+    }
+  }
+  
+  a {
+    &:hover {
+      color: #ff5252;
+    }
+  }
+}

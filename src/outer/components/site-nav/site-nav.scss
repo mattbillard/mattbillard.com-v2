@@ -1,0 +1,27 @@
+.site-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  .bg-dark {
+    background-image: linear-gradient(to bottom, #222222, #111111);
+  }
+
+  .dropdown-item {
+    padding: 8px 24px;
+  }
+
+  .dropdown-item.active, 
+  .dropdown-item:active,
+  .dropdown-item:hover {
+    background: #eaeaea;
+    color: inherit;
+  }
+}
+
+/* Phone size */
+@media (max-width: 449px) {
+  .site-nav {
+    display: none;
+  }
+}

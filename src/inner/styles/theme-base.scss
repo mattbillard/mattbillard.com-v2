@@ -1,0 +1,104 @@
+.inner-content {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+  h1, h2, h3, h4, h5 {
+    font-weight: 300;
+  }
+
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  h4 { font-size: 20px; }
+  h5 { font-size: 18px; }
+
+  i {
+    color: #777;
+  }
+  
+  .top-bar {
+    box-sizing: border-box;
+    padding: 10px 0;
+
+    border-bottom: solid 1px;
+  
+    text-align: center;
+    font-size: 18px;
+
+    .circle-icon {
+      color: #fff;
+      background: #777;    
+    }
+
+    .top-bar-title {
+      display: none;
+    }
+  }
+  
+  .content-area {
+    // Momentum scrolling for iPhone
+    overflow-y: scroll; // Has to be scroll, not auto
+    -webkit-overflow-scrolling: touch; 
+  }
+  
+  .bottom-bar {
+    display: flex;
+    flex-direction: row;
+
+    border-top: solid 1px;
+  
+    text-align: center;
+  
+    .bottom-tab {
+      padding: 12px 0 8px 0;
+      box-sizing: border-box;
+      flex-grow: 1;
+      cursor: pointer;
+    }
+  }
+  
+  // .bottom-tab:hover {
+  // }
+  
+  .button {
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+  
+    border: solid 1px;
+    border-radius: 5px;
+    background: #fff;
+  }
+  
+  .card {
+    margin-bottom: 30px;
+  
+    border: solid 1px;
+    border-radius: 5px;
+    
+    .card-header {
+      padding: 8px 16px;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: solid 1px;
+    }
+    
+    .card-body {
+      padding: 8px 16px;
+    }
+  }
+  
+  *::-webkit-scrollbar {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background-color: #aaa; 
+    border: solid 4px #fff;
+  }
+}

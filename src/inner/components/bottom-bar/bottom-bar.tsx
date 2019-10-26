@@ -1,28 +1,24 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { TabBar } from 'antd-mobile';
 
 import * as config from '../../../config';
+import '../../styles/theme-base.scss';
 
 const { pages } = config;
 
 export const BottomBar = withRouter(({ history }) =>  {
   return (
-    <div>
-      <TabBar
-        barTintColor="#111118"
-        tintColor="#ccc"
-        unselectedTintColor="#ccc"
-      >
-        {Object.values(pages).map((page, idx) => (
-          <TabBar.Item
-            title={page.name}
-            icon={<i className={`${page.icon}`}></i>}
-            onPress={() => { history.push(page.innerUri) }}
-            key={idx}
-          />
-        ))}
-      </TabBar>
+    <div className="bottom-bar">
+
+      {Object.values(pages).map((page, idx) => (
+        <div className="bottom-tab" onClick={() => { history.push(page.innerUri) }} key={idx}>
+          <i className={`bottom-tab-icon ${page.icon}`}></i>
+          <div className="bottom-tab-text">
+            {page.name}
+          </div>
+        </div>
+      ))}
+
     </div>
   );
 })

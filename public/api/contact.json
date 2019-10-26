@@ -2,11 +2,13 @@
   "gitHub": {
     "title": "GitHub",
     "icon": "fab fa-github",
+    "text": "github.com/mattbillard",
     "href": "https://github.com/mattbillard"
   },
   "linkedIn": {
     "title": "LinkedIn",
     "icon": "fab fa-linkedin",
+    "text": "linkedin.com/in/mattbillard/",
     "href": "https://linkedin.com/in/mattbillard/"
   }
 }

@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Card } from 'antd-mobile';
 
-import { DownloadResume } from '../../';
+import { Card, DownloadResume } from '../../';
 import { getAboutText, IStoreState } from '../../../redux';
 import { IAboutText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
@@ -33,35 +32,27 @@ export const AboutView: React.FC<IAboutView> = (props) => {
       <DownloadResume />
 
       <h3>{summary.title}</h3>
-      <Card style={{marginBottom: 10}}>
-        <Card.Body>
-          <div>{summary.details1}</div>
-          <div>{summary.details2}</div>
-        </Card.Body>
+      <Card>
+        {summary.details1} <br/>
+        {summary.details2}
       </Card>
 
       <h3>{workExperience.title}</h3>
       {workExperience.jobs.map((job, idx) => (
-        <Card style={{marginBottom: 10}} key={idx}>
-          <Card.Header title={job.company} style={{fontWeight: 'bold'}} />
-          <Card.Body>
-            <div><strong>{job.role1}</strong></div>
-            {job.role2 && <div><strong>{job.role2}</strong></div>}
-            <div>{job.dates}</div>
-            <div>{job.location}</div>
-          </Card.Body>
+        <Card title={job.company} key={idx}>
+          <strong>{job.role1}</strong> <br/>
+          {job.role2 && <strong>{job.role2}<br/></strong>}
+          {job.dates} <br/>
+          {job.location}
         </Card>
       ))}
 
       <h3>{education.title}</h3>
-        <Card style={{marginBottom: 10}}>
-          <Card.Header title={education.university} style={{fontWeight: 'bold'}} />
-          <Card.Body>
-            <div>{education.details1}</div>
-            <div>{education.details2}</div>
-            <div>{education.details3}</div>
-          </Card.Body>
-        </Card>
+      <Card title={education.university}>
+        {education.details1} <br/>
+        {education.details2} <br/>
+        {education.details3}
+      </Card>
 
     </div>
   );

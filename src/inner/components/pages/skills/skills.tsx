@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Card } from 'antd-mobile';
 
-import { DownloadResume } from '../../';
+import { Card, DownloadResume } from '../../';
 import { getSkillsText, IStoreState } from '../../../redux';
 import { ISkillsText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
-import './skills.css';
+import './skills.scss';
 
 export interface ISkillsView {
   skillsText: ISkillsText;
@@ -41,18 +40,14 @@ export const SkillsView: React.FC<ISkillsView> = (props) => {
           <h3>{skillGroup.title}</h3>
 
           {skillGroup.skills.map((skill, idx2) => (
-            <Card style={{marginBottom: 10}} key={idx2}>
-              <Card.Body>
-                <div className="skill">
-                  <div className="left">
-                    <i className={`${skill.icon} fa-2x`}></i> 
-                  </div>
-                  <div className="right">
-                    <h3><strong>{skill.title}</strong></h3>
-                    <div>{skill.details}</div>
-                  </div>
-                </div>
-              </Card.Body>
+            <Card key={idx2}>
+              <div className="skill-left">
+                <i className={`${skill.icon} fa-2x`}></i> 
+              </div>
+              <div className="skill-right">
+                <h4><strong>{skill.title}</strong></h4>
+                <div>{skill.details}</div>
+              </div>
             </Card>
           ))}
         </React.Fragment>

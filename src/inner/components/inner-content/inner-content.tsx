@@ -6,19 +6,26 @@ import { About, BottomBar, Contact, Home, Skills, TopBar } from '../';
 import * as config from '../../../config';
 import { configureStore } from '../../redux';
 
-import '../../../shared/styles/flexbox.css';
-import './inner-content.css';
-import 'antd-mobile/dist/antd-mobile.css'; 
+import '../../styles/flexbox.scss';
+import './inner-content.scss';
+
+import '../../styles/theme-base.scss';
+import '../../styles/theme-main.scss';
+import '../../styles/theme-whatsapp.scss';
+import '../../styles/theme-retro.scss';
+import '../../styles/theme-red.scss';
 
 const store = configureStore();
 const { pages } = config;
 
 export const InnerContent: React.FC = () => {
+  const theme = window.location.hash.replace('#', '') || 'mainTheme';
+
   return (
     <Provider store={store}>
       <BrowserRouter>
 
-        <div className="inner-content flex-rows">
+        <div className={`inner-content flex-rows ${theme}`} key={theme}>
           <TopBar />
 
           <div className="content-area flex-grow-1">

@@ -1,0 +1,88 @@
+.whatsAppTheme {
+  background: #e1d9d2 url('/assets/images/whatsapp-bg.png');
+  
+  .top-bar {
+    color: #fff;
+    background: #075e54;
+    border-top: solid 10px #054d44;
+  }
+  
+  .bottom-bar {
+    background: none;
+    border: none;
+    padding: 5px 10px 10px 10px;
+    align-items: center;
+    
+    .bottom-tab {
+      padding: 8px;
+      background: #fff;
+      
+      &:hover i {
+        color: #333;
+      }
+
+      .bottom-tab-text {
+        display: none;
+      }
+
+      &:last-child {
+        background: #075e54;
+        border-radius: 100%;
+        width: 44px;
+        height: 44px;
+        flex-grow: initial;
+        margin: 0 0 0 10px;
+        padding: 0px;
+        line-height: 46px;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+  
+  .button {
+    background: #e1f3fb;
+    width: 150px;
+    padding: 5px;
+    margin: 0 auto 30px auto;
+    color: #4e636c !important;
+    border-radius: 8px;
+    border: solid 1px #d6d3c7;
+  }
+
+  h3 {
+    padding: 8px 16px;
+    margin-right: 30px;
+    background: #fff;
+    border-radius: 0px 8px 8px 8px;
+    border: solid 1px #d6d3c7;
+    border-right: solid 2px #d6d3c7;
+    border-bottom: solid 2px #d6d3c7;
+  }
+  
+  .card {
+    margin-left: 30px;
+    background: #e1ffc7;
+    border-radius: 8px 0px 8px 8px;
+    border: solid 1px #d6d3c7;
+    border-right: solid 2px #d6d3c7;
+    border-bottom: solid 2px #d6d3c7;
+
+    .card-header {
+      border: none;
+    }
+  }
+
+  .logo-big i {
+    color: #ab9887;
+  }
+  .logo-small i {
+    color: #a5988d;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-color: #e1d9d2;
+  }
+}

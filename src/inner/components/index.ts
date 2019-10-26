@@ -1,6 +1,9 @@
-export * from './inner-content/inner-content';
+export * from './button/button';
+export * from './card/card';
 export * from './bottom-bar/bottom-bar';
 export * from './top-bar/top-bar';
+
+export * from './inner-content/inner-content';
 export * from './download-resume/download-resume';
 
 export * from './pages/about/about';

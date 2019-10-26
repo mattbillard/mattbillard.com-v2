@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Card } from 'antd-mobile';
 
-import { DownloadResume } from '../../';
+import { Card, DownloadResume } from '../../';
 import { getContactText, IStoreState } from '../../../redux';
 import { IContactText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
-import './contact.css';
+import './contact.scss';
 
 export interface IContactView {
   contactText: IContactText;
@@ -28,21 +27,18 @@ export const ContactView: React.FC<IContactView> = (props) => {
   }
 
   return (
-    <div>
+    <div className="contact">
       <h2>Contact</h2>
 
       <DownloadResume />
 
       {Object.values(contactText).map((contact, idx) => (
-        <Card style={{marginBottom: 10}} key={idx}>
-          <Card.Header title={contact.title} />
-          <Card.Body>
-            <a href={contact.href} target="_blank" rel="noopener noreferrer" className="contact-link">
-              <i className={`${contact.icon} fa-10x`}></i> 
-              <br/>
-              {contact.href}
-            </a>
-          </Card.Body>
+        <Card title={contact.title} key={idx}>
+          <a href={contact.href} target="_blank" rel="noopener noreferrer" className="contact-link">
+            <i className={`${contact.icon} fa-10x`}></i> 
+            <br/>
+            {contact.text}
+          </a>
         </Card>
       ))}
 

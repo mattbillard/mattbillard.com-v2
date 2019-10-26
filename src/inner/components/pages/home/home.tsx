@@ -6,7 +6,7 @@ import { getHomeText, IStoreState } from '../../../redux';
 import { IHomeText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
-import './home.css';
+import './home.scss';
 
 export interface IHomeView {
   homeText: IHomeText;

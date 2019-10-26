@@ -14,12 +14,16 @@ export const updateParentUrlAndTitle = (message) => {
   }
   
   // Update URL and title if necessary
-  const page = config.pages[data.page];
-  const title = `${config.siteTitle}${page.windowTitle}`;
-  const uri = page.outerUri;
-  if (window.location.pathname === uri) {
+  const { outerUri, windowTitle } = config.pages[data.page];
+  if (window.location.pathname === outerUri) {
     return;
   }
-  window.history.replaceState({}, title, uri);
+  
+  const title = config.siteTitle + windowTitle;
   window.document.title = title;
+
+  const hash = window.location.hash;
+  const uri = outerUri + hash;
+  window.history.replaceState({}, title, uri);
+  
 }

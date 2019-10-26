@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button } from 'antd-mobile';
+
+import { Button } from '../';
+import '../../styles/theme-base.scss';
 
 const resumeText = {
   text: "Download Resume",
@@ -8,7 +10,7 @@ const resumeText = {
 
 export const DownloadResume: React.FC = () => {
   return (
-    <Button onClick={() => window.open(resumeText.href, '_blank')} style={{marginBottom:10}}>
+    <Button onClick={() => window.open(resumeText.href, '_blank')}>
       {resumeText.text}
     </Button>
   );
