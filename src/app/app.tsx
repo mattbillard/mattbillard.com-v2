@@ -6,8 +6,6 @@ import { OuterContent } from '../outer/components';
 
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 
-import './app.scss';
-
 export const App: React.FC = () => {
   return (
     <BrowserRouter>

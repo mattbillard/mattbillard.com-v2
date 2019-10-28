@@ -13,7 +13,6 @@ export const updateParentUrlAndTitle = (message) => {
     return;
   }
   
-  // Update URL and title if necessary
   const { outerUri, windowTitle } = config.pages[data.page];
   if (window.location.pathname === outerUri) {
     return;
