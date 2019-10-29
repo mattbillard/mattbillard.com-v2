@@ -10,16 +10,16 @@ import '../../styles/flexbox.scss';
 import './inner-content.scss';
 
 import '../../styles/theme-base.scss';
-import '../../styles/theme-main.scss';
-import '../../styles/theme-whatsapp.scss';
-import '../../styles/theme-retro.scss';
+import '../../styles/theme-blue.scss';
 import '../../styles/theme-red.scss';
+import '../../styles/theme-retro.scss';
+import '../../styles/theme-whatsapp.scss';
 
 const store = configureStore();
 const { pages } = config;
 
 export const InnerContent: React.FC = () => {
-  const theme = window.location.hash.replace('#', '') || 'mainTheme';
+  const theme = window.location.hash.replace('#', '') || config.Themes.Default;
 
   return (
     <Provider store={store}>

@@ -37,4 +37,12 @@ export const pages = {
   },
 };
 
+export enum Themes {
+  Default = 'blueTheme',
+  Blue = 'blueTheme',
+  Red = 'redTheme',
+  Retro = 'retroTheme',
+  WhatsApp = 'whatsAppTheme',
+}
+
 export const siteTitle = 'MattBillard.com';
