@@ -10,8 +10,8 @@
       {
         "company": "Goldman Sachs + InRhythm",
         "location": "Manhattan, NY",
-        "role1": "JavaScript Developer",
-        "role2": "(Lead Developer)",
+        "role1": "React Developer",
+        "role2": "(Client Lead)",
         "dates": "December 2017 - Present"
       },
       { 
@@ -25,7 +25,7 @@
         "company": "J.P. Morgan Chase",
         "location": "Manhattan, NY",
         "role1": "Full Stack Developer",
-        "role2": "(Lead Developer)",
+        "role2": "(UI Lead)",
         "dates": "September 2015 - March 2017"
       },
       { 
