@@ -34,33 +34,33 @@ export class InnerContent extends React.Component<{}, IInnerConentState> {
 
   setTheme = () => {
     const theme = window.location.hash.replace('#', '') || config.Themes.Default;
-    this.setState({theme});
+    this.setState({ theme });
   }
 
   render() {
     const { theme } = this.state;
-    
+
     return (
       <Provider store={store}>
         <BrowserRouter>
-  
+
           <div className={`inner-content flex-rows ${theme}`} key={theme}>
             <TopBar />
-  
+
             <div className="content-area flex-grow-1">
               <Switch>
-                <Route path={pages.home.uri} component={Home}/>
-                <Route path={pages.about.uri} component={About}/>
-                <Route path={pages.skills.uri} component={Skills}/>
-                <Route path={pages.contact.uri} component={Contact}/>
-                <Redirect from="/inner/*" to="/inner/home" /> 
+                <Route path={pages.about.uri} component={About} />
+                <Route path={pages.skills.uri} component={Skills} />
+                <Route path={pages.contact.uri} component={Contact} />
+                <Route path={pages.home.uri} component={Home} />
+                {/* <Redirect from="/inner/*" to="/inner/home" /> */}
               </Switch>
             </div>
-  
+
             <BottomBar />
           </div>
-  
-        </BrowserRouter> 
+
+        </BrowserRouter>
       </Provider>
     );
   }
