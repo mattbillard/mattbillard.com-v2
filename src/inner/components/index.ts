@@ -1,6 +1,7 @@
 export * from './button/button';
-export * from './card/card';
 export * from './bottom-bar/bottom-bar';
+export * from './card/card';
+export * from './error-boundary/error-boundary';
 export * from './top-bar/top-bar';
 
 export * from './inner-content/inner-content';
