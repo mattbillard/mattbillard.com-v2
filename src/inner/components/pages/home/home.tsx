@@ -1,17 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import { getHomeText, IStoreState } from '../../../redux';
-import { IHomeText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
 import './home.scss';
 
-export interface IHomeView {
-  homeText: IHomeText;
-  getHomeText: typeof getHomeText;
-}
+export interface IHomeView extends StateProps, DispatchProps { }
 
 export const HomeView: React.FC<IHomeView> = (props) => {
   const { homeText, getHomeText } = props;
@@ -30,14 +25,14 @@ export const HomeView: React.FC<IHomeView> = (props) => {
 
       <div>
         <div className="logo-big">
-          <i className="fab fa-react"></i> 
+          <i className="fab fa-react"></i>
         </div>
         <div className="logo-small">
-          <i className="fab fa-vuejs"></i> 
-          <i className="fab fa-js"></i> 
-          <i className="fab fa-node-js"></i> 
-          <i className="fab fa-java"></i> 
-          <i className="fab fa-python"></i> 
+          <i className="fab fa-vuejs"></i>
+          <i className="fab fa-js"></i>
+          <i className="fab fa-node-js"></i>
+          <i className="fab fa-java"></i>
+          <i className="fab fa-python"></i>
         </div>
       </div>
 
@@ -54,10 +49,11 @@ const mapStateToProps = (state: IStoreState) => ({
   homeText: state.textReducer.homeText
 });
 
-const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({
-    getHomeText
-  }, dispatch)
-);
+const mapDispatchToProps = {
+  getHomeText
+}
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(HomeView);

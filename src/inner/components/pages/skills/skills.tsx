@@ -1,18 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import { Card, DownloadResume } from '../../';
 import { getSkillsText, IStoreState } from '../../../redux';
-import { ISkillsText } from '../../../types';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
 import './skills.scss';
 
-export interface ISkillsView {
-  skillsText: ISkillsText;
-  getSkillsText: typeof getSkillsText;
-}
+export interface ISkillsView extends StateProps, DispatchProps { }
 
 export const SkillsView: React.FC<ISkillsView> = (props) => {
   const { skillsText, getSkillsText } = props;
@@ -31,7 +26,7 @@ export const SkillsView: React.FC<ISkillsView> = (props) => {
   return (
     <div className="skills">
       <h2>Skills</h2>
-      
+
       <DownloadResume />
 
       {skillGroups.map((skillGroup, idx1) => (
@@ -42,7 +37,7 @@ export const SkillsView: React.FC<ISkillsView> = (props) => {
           {skillGroup.skills.map((skill, idx2) => (
             <Card key={idx2}>
               <div className="skill-left">
-                <i className={`${skill.icon} fa-2x`}></i> 
+                <i className={`${skill.icon} fa-2x`}></i>
               </div>
               <div className="skill-right">
                 <h4><strong>{skill.title}</strong></h4>
@@ -61,10 +56,11 @@ const mapStateToProps = (state: IStoreState) => ({
   skillsText: state.textReducer.skillsText
 });
 
-const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({
-    getSkillsText
-  }, dispatch)
-);
+const mapDispatchToProps = {
+  getSkillsText
+}
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
 
 export const Skills = connect(mapStateToProps, mapDispatchToProps)(SkillsView);
