@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 import { Card, DownloadResume } from '../../';
 import { getAboutText, IStoreState } from '../../../redux';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
-export interface IAboutView extends StateProps, DispatchProps { }
+export interface IAbout { }
 
-export const AboutView: React.FC<IAboutView> = (props) => {
-  const { aboutText, getAboutText } = props;
+export const About: React.FC<IAbout> = (props) => {
+  const aboutText = useSelector((state: IStoreState) => state.textReducer.aboutText);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    !aboutText && getAboutText();
+    !aboutText && dispatch(getAboutText());
     tellParentToUpdateUrl('about');
   });
 
@@ -52,16 +53,3 @@ export const AboutView: React.FC<IAboutView> = (props) => {
     </div>
   );
 }
-
-const mapStateToProps = (state: IStoreState) => ({
-  aboutText: state.textReducer.aboutText
-});
-
-const mapDispatchToProps = {
-  getAboutText
-}
-
-type StateProps = ReturnType<typeof mapStateToProps>;
-type DispatchProps = typeof mapDispatchToProps;
-
-export const About = connect(mapStateToProps, mapDispatchToProps)(AboutView);

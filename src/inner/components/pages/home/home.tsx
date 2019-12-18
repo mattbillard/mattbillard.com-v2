@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 import { getHomeText, IStoreState } from '../../../redux';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
 import './home.scss';
 
-export interface IHomeView extends StateProps, DispatchProps { }
+export interface IHome { }
 
-export const HomeView: React.FC<IHomeView> = (props) => {
-  const { homeText, getHomeText } = props;
+export const Home: React.FC<IHome> = (props) => {
+  const homeText = useSelector((state: IStoreState) => state.textReducer.homeText);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    !homeText && getHomeText();
+    !homeText && dispatch(getHomeText());
     tellParentToUpdateUrl('home');
   });
 
@@ -44,16 +45,3 @@ export const HomeView: React.FC<IHomeView> = (props) => {
     </div>
   );
 }
-
-const mapStateToProps = (state: IStoreState) => ({
-  homeText: state.textReducer.homeText
-});
-
-const mapDispatchToProps = {
-  getHomeText
-}
-
-type StateProps = ReturnType<typeof mapStateToProps>;
-type DispatchProps = typeof mapDispatchToProps;
-
-export const Home = connect(mapStateToProps, mapDispatchToProps)(HomeView);

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 import { Card, DownloadResume } from '../../';
 import { getSkillsText, IStoreState } from '../../../redux';
@@ -7,13 +7,14 @@ import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
 import './skills.scss';
 
-export interface ISkillsView extends StateProps, DispatchProps { }
+export interface ISkills { }
 
-export const SkillsView: React.FC<ISkillsView> = (props) => {
-  const { skillsText, getSkillsText } = props;
+export const Skills: React.FC<ISkills> = (props) => {
+  const skillsText = useSelector((state: IStoreState) => state.textReducer.skillsText);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    !skillsText && getSkillsText();
+    !skillsText && dispatch(getSkillsText());
     tellParentToUpdateUrl('skills');
   });
 
@@ -51,16 +52,3 @@ export const SkillsView: React.FC<ISkillsView> = (props) => {
     </div>
   );
 }
-
-const mapStateToProps = (state: IStoreState) => ({
-  skillsText: state.textReducer.skillsText
-});
-
-const mapDispatchToProps = {
-  getSkillsText
-}
-
-type StateProps = ReturnType<typeof mapStateToProps>;
-type DispatchProps = typeof mapDispatchToProps;
-
-export const Skills = connect(mapStateToProps, mapDispatchToProps)(SkillsView);
