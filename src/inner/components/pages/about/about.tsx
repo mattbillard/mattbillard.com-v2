@@ -5,8 +5,12 @@ import { Card, DownloadResume } from '../../';
 import { getAboutText, IStoreState } from '../../../redux';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
-// BOTH WORK - with CreatReactApp CSS modules and typed-css-modules 
-// COMMAND - npx tcm -w -c -p 'src/**/*.module.scss'
+// BOTH WORK - with CreatReactApp CSS modules and typed css/scss modules 
+// COMMAND - either works 
+// - typed-css-modules
+//     npx tcm -w -c -p 'src/**/*.module.scss'
+// - typed-scss-modules (seems more maintained)
+//     npx tsm src/**/*.module.scss -w
 import * as styles from './about.module.scss';
 
 

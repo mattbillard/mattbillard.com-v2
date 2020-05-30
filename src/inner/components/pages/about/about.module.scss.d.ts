@@ -1,7 +1,3 @@
-declare const styles: {
-  readonly "test": string;
-  readonly "testTest": string;
-  readonly "testTest": string;
-};
-export = styles;
-
+export const test: string;
+export const testTest: string;
+export const testTest: string;
