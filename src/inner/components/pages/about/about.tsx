@@ -5,6 +5,16 @@ import { Card, DownloadResume } from '../../';
 import { getAboutText, IStoreState } from '../../../redux';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
+// BOTH WORK - with CreatReactApp CSS modules and typed-css-modules (tsc src -w -c)
+// import styles from './about.module.css';
+import * as styles from './about.module.css';
+
+// TODO: DELETE. DOES NOT WORK WITH EITHER 
+// import styles from './about.css';
+// import * as styles from './about.css';
+
+console.log('---styles', styles);
+
 export interface IAbout { }
 
 export const About: React.FC<IAbout> = (props) => {
@@ -24,7 +34,9 @@ export const About: React.FC<IAbout> = (props) => {
 
   return (
     <div>
-      <h2>About</h2>
+      <h2 className={styles.test}>About - {styles.test}</h2>
+      <h2 className={styles.testTest}>About - {styles.testTest}</h2>
+      <h2 className={styles['test-test']}>About - {styles['test-test']}</h2>
       <DownloadResume />
 
       <h3>{summary.title}</h3>

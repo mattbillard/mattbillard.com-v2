@@ -1,0 +1,51 @@
+
+
+*** MOVE THESE INTO LEARNING FOLDER ***
+
+
+2020-05-18
+
+React CSS 
+- Best article: https://www.robinwieruch.de/react-css-styling
+- CSS-in-JS 
+  - Sucks sucks sucks sucks 
+  - Either can't paste in CSS (need to use their syntax) or need to give every styled HTML element a name (even more annoying)
+- CSS modules 
+  - Better than CSS-in-JS
+  - No need for BEM, etc 
+  - Instructions 
+    - Name the file filename.module.css
+    - Write css
+      .fooBar { .... }
+      or
+      .foo-bar { .... }
+    - import it like `import styles from './filename.module.css'
+    - Use it
+      className={styles.fooBar}
+      or
+      className={styles.['foo-bar']}
+    - Unfortunately, you can see, it prefers camelCase to tradtional kebab-case 
+  - Create-React-App allows them automatically
+    - https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
+
+- Create-Rect-App 
+  - CSS modules 
+    - https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
+  - https 
+    - https://create-react-app.dev/docs/using-https-in-development/
+    - Supports https easily. (See docs for various ways to do it)
+  - serve vs http-server
+    - They seem mostly the same except
+    -*** serve works with HTML5 history navigation and http-server does not 
+    - https-server lists files and allows you to navigate folders like Apache servers do 
+  - Bundle size 
+    - https://create-react-app.dev/docs/analyzing-the-bundle-size/
+    - Super easy. Makes a diagram showing which files are adding bloat. See instructions. 
+
+
+
+- Typed CSS 
+  - Looks promising 
+  - https://github.com/Quramy/typed-css-modules
+  - https://stackoverflow.com/questions/41336858/how-to-import-css-modules-with-typescript-react-and-webpack
+  - But requires 
