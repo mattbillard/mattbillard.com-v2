@@ -41,11 +41,19 @@ React CSS
   - Bundle size 
     - https://create-react-app.dev/docs/analyzing-the-bundle-size/
     - Super easy. Makes a diagram showing which files are adding bloat. See instructions. 
+  - react-app-rewired
+    - Allows you to edit the webpack config without ejecting the app 
+    - https://github.com/timarney/react-app-rewired
 
 
 
-- Typed CSS 
-  - Looks promising 
-  - https://github.com/Quramy/typed-css-modules
-  - https://stackoverflow.com/questions/41336858/how-to-import-css-modules-with-typescript-react-and-webpack
-  - But requires 
+- Typed CSS modules 
+  - Note
+    - I only got these working with create-react-app, when I used CSS modules, i.e. foo.module.css and foo.module.scss. They did not work without 'module' in their name. 
+  - Article 
+    - https://medium.com/rubber-ducking/generating-typescript-definitions-for-css-modules-using-sass-461e33623ec2
+  - CSS 
+    - https://github.com/Quramy/typed-css-modules
+  - SCSS 
+    - https://github.com/skovy/typed-scss-modules
+
