@@ -5,13 +5,10 @@ import { Card, DownloadResume } from '../../';
 import { getAboutText, IStoreState } from '../../../redux';
 import { tellParentToUpdateUrl } from '../../../../shared/utils/utils';
 
-// BOTH WORK - with CreatReactApp CSS modules and typed-css-modules (tsc src -w -c)
-// import styles from './about.module.css';
-import * as styles from './about.module.css';
+// BOTH WORK - with CreatReactApp CSS modules and typed-css-modules 
+// COMMAND - npx tcm -w -c -p 'src/**/*.module.scss'
+import * as styles from './about.module.scss';
 
-// TODO: DELETE. DOES NOT WORK WITH EITHER 
-// import styles from './about.css';
-// import * as styles from './about.css';
 
 console.log('---styles', styles);
 
