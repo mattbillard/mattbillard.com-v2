@@ -5,22 +5,22 @@
       "skills": [
         {
           "title": "JavaScript",
-          "details": "React/Redux, TypeScript, Vue/Vuex, Node/Express, Angular, ES6, Jest, Enzyme, some GraphQL/Apollo",
+          "details": "React/Redux, TypeScript, GraphQL, Webpack, Rush, Babel, WebSockets, OpenFin, Ag-Grid, Highcharts, Node/Express, Jest/Enzyme, Vue/Vuex",
           "icon": "fab fa-js"
         },
         {
           "title": "Other Programming",
-          "details": "Some Java/Spring Boot, Python/Flask, Elasticsearch. Pair programming",
+          "details": "Some Java/Spring Boot, Python/Flask",
           "icon": "fab fa-java"
         },
         {
           "title": "HTML5 and CSS3",
-          "details": "Responsive design, PostCSS, Sass, LESS, media queries",
+          "details": "PostCSS, Sass, LESS, responsive design, media queries",
           "icon": "fab fa-html5"
         },
         {
           "title": "Databases",
-          "details": "MongoDB, PostgreSQL, MySQL, SQLite, Web SQL",
+          "details": "MongoDB, PostgreSQL, Elasticsearch, MySQL, SQLite, Web SQL",
           "icon": "fas fa-database"
         }
       ]
@@ -30,7 +30,7 @@
       "skills": [
         {
           "title": "Management",
-          "details": "Mentoring, coaching, performance reviews, interviewing, onboarding, retention",
+          "details": "Mentoring, coaching, one-on-ones, performance reviews, interviewing, onboarding, retention",
           "icon": "fas fa-comments"
         },
         {
